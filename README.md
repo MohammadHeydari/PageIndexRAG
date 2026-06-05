@@ -69,9 +69,9 @@ You can swap it for any OpenAI-compatible endpoint by changing `GAPGPT_BASE_URL`
 ## Example Output
 
 ```
-============================================================
+
   DIY PageIndex-style Vectorless RAG
-============================================================
+
 Extracting Document Structure
    20 Sections Found
 
@@ -86,15 +86,15 @@ Discussion' contains the key quantitative findings.
 
 Selected Nodes: ['node_013', 'node_014']
 
-════════════════════════════════════════════════════════════
+
 Final Response
-════════════════════════════════════════════════════════════
+
 1. PSC method improved deep learning classifier performance.
 2. Best accuracy: 81.91% (FastText + LSTM + PSC).
 3. BERT underperformed due to domain mismatch with informal text.
 
 Used nodes: node_013, node_014
-════════════════════════════════════════════════════════════
+
 
 Results stored in rag_result.json
 ```
