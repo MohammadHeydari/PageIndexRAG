@@ -120,19 +120,6 @@ Results are saved to `rag_result.json`:
 
 ---
 
-## Why Not Vector Search?
-
-```
-| | Vector RAG | This project |
-|---|---|---|
-| Retrieval method | Embedding similarity | LLM reasoning over tree |
-| Document structure | Ignored (flat chunks) | Preserved (hierarchy) |
-| Traceability | Chunk indices | Named node IDs + reasoning |
-| External services | Vector DB required | None |
-| Best for | Short, uniform docs | Long, structured documents |
-```
----
-
 ## Requirements
 
 - Python 3.10+
