@@ -7,6 +7,8 @@ Instead of splitting documents into fixed chunks and searching an embedding spac
 2. Uses an **LLM to reason over the tree** and select relevant nodes
 3. Extracts text from those nodes and generates a **grounded, traceable answer**
 
+![](images/img.png)
+![](images/img_1.png)
 ---
 
 ## How It Works
@@ -119,6 +121,47 @@ Results are saved to `rag_result.json`:
 ```
 
 ---
+
+
+## Elasticsearch + Kibana Integration
+
+This project includes a hybrid search extension (`pageindex_es.py`) that connects to a local Elasticsearch instance.
+
+**How it works:**
+
+```
+Query
+  └─► Elasticsearch full-text search → top 10 candidate nodes
+            └─► LLM reasons over candidates → selects 2-3 final nodes
+                      └─► Text from selected nodes → final answer
+```
+
+The document tree is indexed once on first run. Every subsequent query skips PDF parsing and goes straight to Elasticsearch — making repeated queries significantly faster.
+
+**Setup:**
+
+1. Install and run Elasticsearch locally (tested with v9.4.2)
+2. Create a `.env` file:
+```
+GAPGPT_API_KEY=your_key
+ES_PASSWORD=your_elastic_password
+```
+3. Install dependencies and run:
+```bash
+pip install elasticsearch python-dotenv
+python pageindex_es.py
+```
+
+**Kibana Dashboard:**
+
+The indexed nodes (`rag_nodes`) can be explored visually in Kibana:
+- Connect Kibana to the same Elasticsearch instance
+- Create a Data View for the `rag_nodes` index
+- Use Discover to search and filter nodes by title, summary, or page
+- Build visualizations — for example, a bar chart showing node distribution across pages
+
+---
+
 
 ## Requirements
 
