@@ -12,11 +12,11 @@ Instead of splitting documents into fixed chunks and searching an embedding spac
 ## How It Works
 
 ```
-PDF
- └─► pymupdf extracts headings + text
-        └─► LLM summarizes each section (one sentence)
-               └─► LLM reasons over the tree → picks relevant node IDs
-                      └─► Text from selected nodes → LLM generates final answer
+- PDF
+- pymupdf extracts headings + text
+- LLM summarizes each section (one sentence)
+- LLM reasons over the tree → picks relevant node IDs
+- Text from selected nodes → LLM generates final answer
 ```
 
 No embeddings. No cosine similarity. No top-K lookup.
