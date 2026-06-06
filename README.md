@@ -125,31 +125,23 @@ Results are saved to `rag_result.json`:
 
 ## Elasticsearch + Kibana Integration
 
-This project includes a hybrid search extension (`pageindex_es.py`) that connects to a local Elasticsearch instance.
+This project includes a hybrid search extension (`pageindex.py`) that connects to a local Elasticsearch instance.
 
 **How it works:**
 
 ```
-Query
-  └─► Elasticsearch full-text search → top 10 candidate nodes
-            └─► LLM reasons over candidates → selects 2-3 final nodes
-                      └─► Text from selected nodes → final answer
+- Query
+- Elasticsearch full-text search → top 10 candidate nodes
+- LLM reasons over candidates → selects 2-3 final nodes
+- Text from selected nodes → final answer
 ```
 
 The document tree is indexed once on first run. Every subsequent query skips PDF parsing and goes straight to Elasticsearch — making repeated queries significantly faster.
 
-**Setup:**
-
-1. Install and run Elasticsearch locally (tested with v9.4.2)
-2. Create a `.env` file:
-```
-GAPGPT_API_KEY=your_key
-ES_PASSWORD=your_elastic_password
-```
-3. Install dependencies and run:
+Install dependencies and run:
 ```bash
 pip install elasticsearch python-dotenv
-python pageindex_es.py
+python pageindex.py
 ```
 
 **Kibana Dashboard:**
@@ -169,3 +161,5 @@ The indexed nodes (`rag_nodes`) can be explored visually in Kibana:
 - `pymupdf` — PDF parsing
 - `openai` — LLM calls (OpenAI-compatible)
 - `requests` — PDF download
+- `elasticsearch`
+- `python-dotenv`
