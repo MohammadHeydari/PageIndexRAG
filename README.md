@@ -40,7 +40,7 @@ cd diy-pageindex-rag
 
 **2. Install dependencies**
 ```bash
-pip install pymupdf openai requests
+pip install pymupdf openai requests elasticsearch python-dotenv
 ```
 
 **3. Set your API key**
