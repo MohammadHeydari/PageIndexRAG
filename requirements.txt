@@ -1,3 +1,5 @@
 pymupdf
 openai
 requests
+elasticsearch
+python-dotenv

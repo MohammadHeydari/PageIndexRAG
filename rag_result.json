@@ -1,0 +1,9 @@
+{
+  "pdf": "https://arxiv.org/pdf/2403.06023.pdf",
+  "query": "What are the main conclusions of this document?",
+  "selected_nodes": [
+    "node_013",
+    "node_002"
+  ],
+  "answer": "The main conclusions are:\n1. Incorporating the PSC method improves the performance of all deep learning methods, though the enhancement is modest.\n2. The highest accuracy achieved was 81.91% using FastText vectors with an LSTM network.\n3. Deep learning methods generally outperform machine learning methods, with FastText outperforming Word2Vec.\n4. BERT-based methods underperformed due to a domain mismatch between pretrained formal texts and conversational social network data.\n5. Overfitting was observed, highlighting the need for careful hyperparameter tuning.\n\nnode_013"
+}
