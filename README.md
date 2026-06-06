@@ -7,8 +7,11 @@ Instead of splitting documents into fixed chunks and searching an embedding spac
 2. Uses an **LLM to reason over the tree** and select relevant nodes
 3. Extracts text from those nodes and generates a **grounded, traceable answer**
 
+- Kibana Dashboard
 ![](images/img.png)
+- Indexed Data on Elastic
 ![](images/img_1.png)
+- Chat with Document in Streamlit 
 ![](images/img_2.png)
 ---
 
