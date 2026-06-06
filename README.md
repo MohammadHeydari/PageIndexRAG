@@ -9,6 +9,7 @@ Instead of splitting documents into fixed chunks and searching an embedding spac
 
 ![](images/img.png)
 ![](images/img_1.png)
+![](images/img_2.png)
 ---
 
 ## How It Works
